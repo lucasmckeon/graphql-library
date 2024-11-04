@@ -19,16 +19,16 @@ const resolvers = {
     allAuthors: async () => await Author.find({}),
     me: (root, args, context) => context.currentUser,
   },
-  Author: {
-    bookCount: async (root) => {
-      const books = await Book.find({});
-      return books.reduce(
-        (accumulator, b) =>
-          b.author === root.name ? ++accumulator : accumulator,
-        0
-      );
-    },
-  },
+  // Author: {
+  //   bookCount: async (root) => {
+  //     const books = await Book.find({});
+  //     return books.reduce(
+  //       (accumulator, b) =>
+  //         b.author === root.name ? ++accumulator : accumulator,
+  //       0
+  //     );
+  //   },
+  // },
   Mutation: {
     addBook: async (root, args, context) => {
       if (!context.currentUser) {
@@ -54,6 +54,8 @@ const resolvers = {
           });
         }
       }
+      author.bookCount += 1;
+      await author.save();
       try {
         const book = await Book.create({ ...args, author });
         pubsub.publish('BOOK_ADDED', { bookAdded: book });
