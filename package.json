@@ -12,14 +12,28 @@
   "description": "",
   "dependencies": {
     "@apollo/server": "^4.11.0",
+    "@graphql-tools/schema": "^10.0.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "express": "^4.21.1",
     "graphql": "^16.9.0",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-tools": "^9.0.2",
+    "graphql-ws": "^5.16.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.3",
     "mongoose-unique-validator": "^5.0.1",
-    "uuid": "^11.0.2"
+    "uuid": "^11.0.2",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin-js": "^2.8.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc-2d16326d-20240930",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-vitest-globals": "^1.5.0",
+    "globals": "^15.9.0",
     "nodemon": "^3.1.7"
   }
 }

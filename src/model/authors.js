@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import uniqueValidator from 'mongoose-unique-validator';
-console.log(uniqueValidator);
 const schema = new mongoose.Schema({
   name: {
     type: String,
